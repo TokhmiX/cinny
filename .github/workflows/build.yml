@@ -14,6 +14,7 @@ jobs:
             - name: Set up Node
               uses: actions/setup-node@v2
               
+            - run: latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
             - run: git checkout $latestTag
             
             - run: npm install
